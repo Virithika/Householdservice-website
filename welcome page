@@ -1,0 +1,241 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["uname"])) {
+    header("Location: index.html");
+    exit;
+}
+
+$username = $_SESSION["uname"];
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      
+      body {
+          margin: 4;
+         padding: 200;
+         background-image: linear-gradient(rgba(227, 219, 219, 0.0),rgba(227, 219, 219, 0.0)),url("bg.jpg");
+         background-size: cover;
+         background-position: center;
+         background-attachment: fixed;
+        }
+      h1{
+         color: rgba(2, 7, 49, 0.863);
+         top: 2px;
+      }
+      h3{
+        color: purple;
+      }
+      .right-corner{
+         color: white;
+         position: absolute;
+         right: 17%;
+         top: 10px;
+      }
+      .right-corner1{
+         color: white;
+         position: absolute;
+         right: 10%;
+         top: 10px;
+      }
+      .right-corner3{
+         color: white;
+         position: absolute;
+         right: 25%;
+         top: 10px;
+      }
+      .right-corner2{
+        color: white;
+        position: absolute;
+        right: 3%;
+        top: 10px;
+        
+      }
+     
+      .circle-image-container {
+      position: relative; /* Make the container position relative */
+      width: 100px; /* Adjust the width and height to your desired size */
+      height: 100px;
+      overflow: hidden; /* Clip content outside the circle */
+    }
+    .circle-image-container1 {
+      margin-left: 80px;
+      margin-bottom: 80px;
+      position: relative; /* Make the container position relative */
+      width: 100px; /* Adjust the width and height to your desired size */
+      height: 100px;
+      overflow: hidden; /* Clip content outside the circle */
+    }
+    .circle-image {
+      width: 90%; /* Make the image cover the container */
+      height: 90%;
+      border-radius: 60px; /* Create a circle */
+      position: absolute; /* Position the image absolutely */
+      top: 20; /* Place it at the top */
+      left: 5; /* Place it at the left */
+    }
+      .fix {
+    background-color: purple;
+    width: 200%; /* Adjust the width as needed */
+    height: 100px;
+    max-width: 1500px; /* Optional: Set a maximum width to prevent excessive stretching */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+  }
+  .fix1 {
+    background-color: purple;
+    width: 200%; /* Adjust the width as needed */
+    height: 400px;
+    max-width: 1500px; /* Optional: Set a maximum width to prevent excessive stretching */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+  }
+  .box {
+    color: darkblue;
+    width: 300px;
+    height: 50px;
+    border: 2px solid grey;
+    padding: 10px;
+    text-align: center;
+    line-height: 100px; /* Center the text vertically */
+    background-color: lightskyblue;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .box1 {
+    color: black;
+    width: 200px;
+    height: 40px;
+    border: 2px solid grey;
+    padding: 5px;
+    text-align: center;
+    line-height: 120px; /* Center the text vertically */
+    background-color:   rgb(66, 206, 117);
+    margin-bottom: 20px;
+    position: absolute;
+        right: 3%;
+        top: 1450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .image-container {
+    width: 500px; /* Set the width of the container */
+    height: 300px; /* Set the height of the container */
+    position: relative;
+    
+  }
+
+  .image {
+    width: 500px; /* Set the width of the images */
+    height: auto;
+    left: 500px; /* Maintain the aspect ratio */
+    position: absolute ;
+    transition: opacity 1s ease; /* Add a smooth transition effect */
+  }
+ 
+.container {
+      display: flex;
+      align-items: center; /* Vertically center-align content */
+    }
+
+    
+
+    .social-icons {
+      flex: 1; /* Make the social icons column flexible */
+      text-align: left; /* Align the icons to the right */
+      padding: 5px; /* Add padding for spacing */
+      font-size: 45px;
+      margin-left: 200px;
+      color: #cdb7ca;
+    }
+
+    .social-icons .icon-link {
+      margin-left: 10px; /* Add space between the icons */
+      color: #cdb7ca;
+    }
+      </style>
+      
+</head>
+<body>
+    
+    <div class="main">
+    <div class="fix">
+    <div class="circle-image-container">
+    <left-corner><img  class="circle-image" src="fixitlogo.jpg" alt="Quick fixit" width="100" height="90"/></left-corner>
+    </div>
+      <h2 class="right-corner3">Home</h2>
+      <right-corner><a href="abt.html"><h2 class="right-corner">About us</h2></a></right-corner>
+      <right><a href="cont.html"><h2 class="right-corner1">Contact</h2></a></right>
+     <right><a  href="logout.php"> <h2 class="right-corner2" id="logoutButton" onclick="showFeedbackForm()">Logout</h2></a></right>
+      
+     </div>
+
+      
+      <center><h1 style="font-size: 60px;">Welcome to Quick Fixit</h1></center>
+    
+      <div class="image-container">
+      <center><img class="image" src="fixit4.jpeg" atl="" width="500px" height="300px"/></center>
+      <center><img class="image" src="fixit.jpg.jpeg" atl="" width="500px" height="300px"/></center>
+      <center><img class="image" src="fixit6.jpg.jpeg" atl="" width="500px" height="300px"/></center>
+      <center><img class="image" src="fixit2.jpg.jpeg" atl="" width="500px" height="300px"/></center>
+     </div>
+     <script>
+    const images = document.querySelectorAll('.image');
+    let currentImageIndex = 0;
+
+    function changeImage() {
+      images[currentImageIndex].style.opacity = '0';
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      images[currentImageIndex].style.opacity = '1';
+    }
+
+    setInterval(changeImage, 2000); // Change image every 3 seconds
+  </script>
+  <br>
+  <br>
+     <center><h1 style="font-size: 40px;" color="green"> Smart Way Easy Life...</h1></center>
+     <center><h1 style="font-size: 25px;"> Expert in Serivce. Repair. Maintenance.</h1></center>
+     <br>
+     <center><h3 style="font-size: 25px;"> All Trending Home Services</h3></center>
+     <center><div class="box" style="font-size: 30px;"><a href="plumber.php">Plumber</a></div></center>
+     <center><div class="box" style="font-size: 30px;"><a href="carpenter.php">Carpenter</a></div></center>
+     <center><div class="box" style="font-size: 30px;"><a href="water.php">Water Purifier Service</a></div></center>
+     <center><div class="box" style="font-size: 30px;"><a href="electrician.php">Electrician</a></div></center>
+     <center><div class="box" style="font-size: 30px;"><a href="painting.php">Painting</a></div></center>
+     <center><div class="box" style="font-size: 30px;"><a href="ac.php">AC/Refrigerator repair</a></div></center>
+     <right><div class="box1" style="font-size: 25px;"><a href="feedback.html">Feedbacks Form</a></div></right>
+      </div>
+      <br><br><br><br><br>
+      <div class="fix1">
+      <div class="container">
+   <div class="circle-image-container1">
+    <left-corner><img  class="circle-image" src="fixitlogo.jpg" alt="Quick fixit" width="90" height="90"/></left-corner>
+    </div>
+    <div class="social-icons">
+      <!-- Add your social media icons here --><br>
+      <p style="font-size: 30px;"><i class="fas fa-envelope"></i> fixithouseholdservices@gmail.com</p>
+      <p style="font-size: 30px;"><i class="fas fa-phone"></i> 9443658100</p>
+      <a href="https://www.facebook.com/yourpage" target="_blank" class="icon-link"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.twitter.com/yourpage" target="_blank" class="icon-link"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/yourpage  b" target="_blank" class="icon-link"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/yourpage" target="_blank" class="icon-link"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.youtube.com/yourpage" target="_blank" class="icon-link"><i class="fab fa-youtube"></i></a>
+    </div>
+    
+  </div>
+  </div>
+</body>
+</html>
+welcome.php
+Displaying welcome.php.
