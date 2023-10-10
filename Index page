@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.24/sweetalert2.all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Fixit</title>
+    <style>
+       
+       body {
+          margin: 4;
+         padding: 200;
+         background-image: linear-gradient(rgba(154, 53, 139, 0.984),rgba(211, 80, 165, 0.797)),url("bg1.jpg");
+         background-size: cover;
+         background-position: center;
+         background-attachment: fixed;
+        }
+  
+
+  .login-container {
+    background: rgb(215, 216, 212);
+    padding: 20px;
+    border: 2px solid #050101;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(7, 2, 2, 0.863);
+    width: 600px;
+    height: 560px;
+    text-align: center;
+  }
+  .hidden{
+    background: rgb(251, 252, 248);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(14, 14, 14, 0.863);
+    width: 700px;
+    height: 565px;
+    text-align: center;
+  }
+  
+  .login-container
+  {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px; /* Adjust the width as needed */
+    margin: 0 auto;
+  }
+  label, input, button {
+    margin-bottom: 20px; /* Adjust this value to control the spacing */
+  }
+/* styles.css */
+.hidden{
+  display: none;
+}
+
+#registrationForm {
+  position: absolute;
+  top: 140px; /* Adjust as needed */
+  right: 200px; /* Adjust as needed */
+  background-color: #e6e4e4;
+  padding: 10px;
+  width: 400px;
+  height: 500px;
+  border: 1px solid #e0d8d8;
+  box-shadow: 0 2px 10px #e0d8d8;
+}
+
+.flex-container {
+    display: flex;
+  }
+
+  .left-column, .right-column {
+    flex: 1;
+    padding: 80px;
+    border: 0.0px solid #c43ba1;
+  }
+
+  .right-column {
+    margin-left: -270px;
+    }
+    .custom-button {
+    background-color: #8a0e81; /* Change this to your desired color */
+    color: #206aaa; /* Change this to the text color you prefer */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .custom-button1 {
+    background-color: #078930; /* Change this to your desired color */
+    color: #010406; /* Change this to the text color you prefer */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .custom-button2 {
+    background-color: #af1515; /* Change this to your desired color */
+    color: #01060a; /* Change this to the text color you prefer */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .user-profile {
+  display: flex;
+  align-items: center;
+  border: 1px solid #c7bfbf;
+  font-size: 20px;
+   top: 20px;
+   border-radius: 3px;
+   padding-left: 20px;
+}
+.username {
+  margin-left: 20px;
+}
+
+
+.pass {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding-left: 20px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(180, 205, 189);
+  padding: 8px;
+  border-radius: 3px;
+}
+.password {
+  margin-left: 20px;
+}
+.email-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cdb7ca;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 4px;
+}
+.email {
+  margin-left: 20px;
+}
+   </style>
+</head>
+<body>
+  <div class="flex-container">
+    <div class="left-column">
+      <!-- Content for the left column -->
+      <img src="bd1.jpg.jpeg" width="750px" height="600px">
+    </div>
+    <div class="right-column">
+      <!-- Content for the right column -->
+      <div id="loginPage">
+        <div class="login-container" id="loginForm">
+          <br>
+          <h1 style="font-size: 30px;" > Welcome Back :) </h1>
+          <br> 
+        <h1 color="white">Login</h1><br>
+        <form action="login.php" method="post">
+          <div class="user-profile">
+          <i class="fas fa-user"></i>
+            <label for="loginUsername" style="font-size: 25px;" class="username">Username:</label>
+            <input type="text" id="loginUsername" name="loginUsername" required><br>
+          </div>
+          <div class="pass">
+          <i class="fas fa-lock"></i>
+            <label for="loginPassword" style="font-size: 25px;" class="password">Password:</label>
+            <input type="password" id="loginPassword" name="loginPassword" required><br>
+          </div>
+            <input type="checkbox" >
+            <lable for="rem" style="font-size: 20px;">Remember me</lable><br>
+            <br>
+            <button type="submit" style="font-size: 25px;" class="custom-button">Login</button><br>
+            <lable style="font-size: 20px;">Don't have an account? </lable>  <label id="registerButton" style="font-size: 25px;" color="blue">Sign up</lable>
+            
+        </form>
+        </div>
+         
+        <div id="registrationForm" class="hidden">
+          
+        <form action="reg.php" method="post">
+          <center> <h2 style="font-size: 30px;"> Sign Up </h2></center>
+          <div class="user-profile">
+            <i class="fas fa-user"></i>
+            <label for="registerUsername" style="font-size: 25px;" class="username">Username:</label>
+            <input type="text"  id="registerUsername" name="registerUsername" required><br>
+            </div>
+            
+            <div class="pass">
+              <i class="fas fa-lock"></i>
+            <label for="registerPassword" style="font-size: 25px;" class="password">Password:</label>
+            <input type="password" id="registerPassword" name="registerPassword" required><br>
+            </div>
+            <div class="pass">
+            <i class="fas fa-lock"></i>
+            <label for="confirmPassword" style="font-size: 25px;" class="password"> Confirm Password:</label>
+            <input type="password"  id="confirmPassword" name="confirmPassword" required><br>
+            <br>
+            </div>
+            <button style="font-size: 25px;" class="custom-button1"> Submit </button>
+            <button id="closeRegistration" style="font-size: 25px;" class="custom-button2">Close</button>
+        </form>
+         </div>
+    </div>
+         <script src="script.js"></script>
+       
+        <script>
+    // script.js
+    document.addEventListener('DOMContentLoaded', function() {
+      const registerButton = document.getElementById('registerButton');
+      const registrationForm = document.getElementById('registrationForm');
+      const closeRegistration = document.getElementById('closeRegistration');
+    
+      registerButton.addEventListener('click', function() {
+        registrationForm.classList.remove('hidden'); // Show the registration form
+      });
+    
+      closeRegistration.addEventListener('click', function() {
+        registrationForm.classList.add('hidden'); // Hide the registration form
+      });
+    });
+    
+    
+    </script>
+    </div>
+  </div>
+
+</body>
+</html>
